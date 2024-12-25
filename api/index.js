@@ -9,14 +9,16 @@ var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
-  // console.warn(req.cookies);
+
   res.send({
-    a: '1111'
+    demo: '/demo'
   });
 });
 
 
 
+
+app.use('/demo', require('./demo'));
 
 // app.use('/test', require('./test'));
 // app.use('/postgres', require('./postgres'));
