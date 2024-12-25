@@ -1,8 +1,30 @@
-const express = require("express");
+const express = require('express');
 const app = express();
+const port = 3000;
 
-app.get("/", (req, res) => res.send("Express on Vercel 3333"));
+var cors = require('cors');
+app.use(cors());
 
-app.listen(3000, () => console.log("Server ready on port 3000."));
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
-module.exports = app;
+app.get('/', (req, res) => {
+  // console.warn(req.cookies);
+  res.send({
+    a: '1111'
+  });
+});
+
+
+
+
+// app.use('/test', require('./test'));
+// app.use('/postgres', require('./postgres'));
+// app.use('/mongo', require('./mongo'));
+// app.use('/redis', require('./redis'));
+// app.use('/elasticsearch', require('./elasticsearch'));
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
