@@ -5,7 +5,6 @@ module.exports = router;
 
 router.get('/', (req, res) => {
 
-  console.warn(aa)
   res.send('test1');
 });
 
